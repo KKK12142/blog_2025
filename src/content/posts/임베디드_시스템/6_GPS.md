@@ -1,6 +1,6 @@
 ---
-title: test
-published: 2025-12-16
+title: 6_GPS
+published: 2025-12-18
 description: ''
 image: ''
 tags: []
