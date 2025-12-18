@@ -8,15 +8,15 @@
 
 ## ✨ 특징
 
-- [x] [Astro](https://astro.build) 및 [Tailwind CSS](https://tailwindcss.com)로 구축됨
-- [x] 부드러운 애니메이션 및 페이지 전환
-- [x] 라이트 모드 / 다크 모드
-- [x] 사용자 정의 가능한 테마 색상 및 배너
-- [x] 반응형 디자인
-- [x] [Pagefind](https://pagefind.app/)를 이용한 검색 기능
-- [x] [Markdown 확장 기능](https://github.com/saicaca/fuwari?tab=readme-ov-file#-markdown-extended-syntax)
-- [x] 목차
-- [x] RSS 피드
+- [O] [Astro](https://astro.build) 및 [Tailwind CSS](https://tailwindcss.com)로 구축됨
+- [O] 부드러운 애니메이션 및 페이지 전환
+- [O] 라이트 모드 / 다크 모드
+- [O] 사용자 정의 가능한 테마 색상 및 배너
+- [O] 반응형 디자인
+- [O] [Pagefind](https://pagefind.app/)를 이용한 검색 기능
+- [O] [Markdown 확장 기능](https://github.com/saicaca/fuwari?tab=readme-ov-file#-markdown-extended-syntax)
+- [O] 목차
+- [O] RSS 피드
 
 ## 🚀 시작하기
 1. 블로그 저장소를 생성하세요:

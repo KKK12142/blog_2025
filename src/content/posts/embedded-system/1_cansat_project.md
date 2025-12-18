@@ -1,10 +1,10 @@
 ---
-title: "[CanSat#0] 캔위성 프로젝트 개요 및 구성"
+title: "[CanSat#1] 캔위성 프로젝트 개요 및 구성"
 published: 2025-12-18
 description: 'ESP32의 사용법 학습 및 응용을 위한 캔위성 프로젝트'
 image: ''
 tags: [ESP32, 임베디드시스템, 캔위성]
-category: '임베디드 시스템'
+category: '캔위성 프로젝트'
 draft: false 
 lang: 'ko'
 ---
@@ -49,4 +49,16 @@ lang: 'ko'
  - [HC-12모듈](/posts/embedded-system/7_hc-12/) 데이터 수신 및 파싱
  - [OLED 모듈](/posts/embedded-system/8_oled/) 수신 데이터 시각화 및 UI 구현
 
- 
+:::caution[발생했던 이슈]
+- UART 자원 충돌: ESP32의 3개 UART 포트를 GPS와 통신 모듈에 어떻게 분배할 것인가?
+
+- 3.3V 전압 강하(Voltage Sag): HC-12 모듈이 전송할 때 발생하는 전압 불안정 문제 해결 (AT+FU1 모드 활용).
+
+- 데이터 파싱: CSV 형태로 들어오는 문자열 데이터를 어떻게 효율적으로 분리할 것인가?
+:::
+
+<div style="text-align: right;">
+
+다음 연결된 포스팅으로 이동하기 [CanSat#2 개발환경 및 기본셋팅](/posts/embedded-system/2_setup_arduino_ide/)
+
+</div>

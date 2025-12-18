@@ -1,10 +1,10 @@
 ---
-title: 8_OLED
+title: "[CanSat#8] OLED"
 published: 2025-12-18
 description: ''
 image: ''
-tags: []
-category: ''
+tags: [ESP32, 임베디드시스템, 캔위성]
+category: '캔위성 프로젝트'
 draft: false 
 lang: ''
 ---

@@ -42,7 +42,7 @@ if (!banner || typeof banner !== "string" || banner.trim() === "") {
 	banner = siteConfig.banner.src;
 }
 
-// TODO don't use post cover as banner for now
+
 banner = siteConfig.banner.src;
 
 const enableBanner = siteConfig.banner.enable;
@@ -225,7 +225,7 @@ import { siteConfig } from '../config';
 // 	}
 // })();
 
-/* TODO This is a temporary solution for style flicker issue when the transition is activated */
+
 /* issue link: https://github.com/withastro/astro/issues/8711, the solution get from here too */
 /* update: fixed in Astro 3.2.4 */
 /*
@@ -364,7 +364,7 @@ function showBanner() {
 }
 
 function init() {
-	// disableAnimation()()		// TODO
+	// disableAnimation()()	
 	loadTheme();
 	loadHue();
 	initCustomScrollbar();
@@ -375,7 +375,7 @@ function init() {
 init();
 
 const setup = () => {
-	// TODO: temp solution to change the height of the banner
+
 /*
 	window.swup.hooks.on('animation:out:start', () => {
 		const path = window.location.pathname
