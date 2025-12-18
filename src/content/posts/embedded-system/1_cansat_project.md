@@ -23,7 +23,7 @@ lang: 'ko'
 # 시스템 전체 구성
 
 완성된 캔위성 시스템은 아래와 같이 **위성 송신부(Satellite)** 와 **지상국 수신부(Ground Station)** 로 구성됩니다. 파란색 박스는 데이터를 수집하여 송신하는 위성부이며, 빨간색 박스는 데이터를 수신하여 시각화하는 지상국입니다.
-![완성품 구조](./완성품.png)
+![완성품 구조](./final_product.png)
 
 ## 데이터 흐름도
 ![머메이드 이미지](./mermaid.png)
@@ -33,20 +33,20 @@ lang: 'ko'
 # 프로젝트 로드맵
 각 단계별 상세 포스트를 통해 시스템을 구현해 나가겠습니다. (`링크`를 클릭하여 해당 포스트로 이동하세요.)
 
-## [개발환경 및 기본셋팅](/posts/임베디드_시스템/2_개발환경_및_기본셋팅/)
+## [개발환경 및 기본셋팅](/posts/embedded-system/2_setup_arduino_ide/)
  - Arduino IDE 설치
  - 필요 라이브러리 설치
  - ESP32 연결
 
 ## 위성 송신부
- - [NEOPIXEL RGB LED](/posts/임베디드_시스템/3_neopixel/) 상태 표시등 구현
- - [MPU6050](/posts/임베디드_시스템/5_mpu6050/) 6축 자이로/가속도 센서를 이용한 자세 측정
- - [AHT20+BMP280](/posts/임베디드_시스템/4_aht20_bmp280/) 온도, 습도, 기압 및 고도 측정
- - [NEO-6M-0-001(GPS)](/posts/임베디드_시스템/6_gps/) 위도, 경도 좌표 수집
- - [HC-12모듈](/posts/임베디드_시스템/7_hc-12/) 장거리 무선데이터 송신
+ - [NEOPIXEL RGB LED](/posts/embedded-system/3_neopixel/) 상태 표시등 구현
+ - [MPU6050](/posts/embedded-system/5_mpu6050/) 6축 자이로/가속도 센서를 이용한 자세 측정
+ - [AHT20+BMP280](/posts/embedded-system/4_aht20_bmp280/) 온도, 습도, 기압 및 고도 측정
+ - [NEO-6M-0-001(GPS)](/posts/embedded-system/6_gps/) 위도, 경도 좌표 수집
+ - [HC-12모듈](/posts/embedded-system/7_hc-12/) 장거리 무선데이터 송신
  
 ## 지상국 수신부
- - [HC-12모듈](/posts/임베디드_시스템/7_hc-12/) 데이터 수신 및 파싱
- - [OLED 모듈](/posts/임베디드_시스템/8_oled/) 수신 데이터 시각화 및 UI 구현
+ - [HC-12모듈](/posts/embedded-system/7_hc-12/) 데이터 수신 및 파싱
+ - [OLED 모듈](/posts/embedded-system/8_oled/) 수신 데이터 시각화 및 UI 구현
 
  
