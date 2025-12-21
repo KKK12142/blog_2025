@@ -123,5 +123,3 @@ void loop() {
   delay(1000);
 }
 ```
-
-[X]TODO: mermaid flowchart 추가

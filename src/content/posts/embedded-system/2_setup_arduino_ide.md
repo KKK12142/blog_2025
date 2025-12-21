@@ -97,7 +97,7 @@ Windows: C:\Users\{사용자이름}\Documents\Arduino\libraries
 
 ---
 
-# 4. USB 드라이버 설치(CP210x/CH340) 윈도우만
+# 4. (잘되면 스킵)USB 드라이버 설치(CP210x/CH340) 윈도우만
 
 ESP32 보드를 PC에 연결했을 때 포트가 인식되지 않는다면 높은 확률로 USB-to-UART 브릿지 드라이버가 필요한 경우입니다. 사용하는 보드의 칩셋을 확인하고 설치하세요.
 
@@ -108,6 +108,8 @@ CH340: [WCH](http://www.wch-ic.com/downloads/CH341SER_ZIP.html) 드라이버 다
 :::tip[설치 확인]
 드라이버 설치 후 보드를 연결하면 Tools > Port 메뉴에 /dev/cu.SLAB_USBtoUART (Mac) 또는 COM3 (Windows)와 같이 새로운 포트가 나타나야 합니다.
 :::
+
+---
 
 # 5. 예제코드 실행해보기 (내장 LED깜빡이기)
 설정이 제대로 되었는지 확인을 위해 아래 코드를 아두이노 IDE에 붙여넣기 후 실행해 봅시다.
