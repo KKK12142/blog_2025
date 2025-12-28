@@ -13,6 +13,8 @@ lang: ''
 
 이때 **RGB LED (NeoPixel)** 를 사용하면 다양한 색상으로 위성의 상태를 표현할 수 있습니다. 이번 포스트에서는 `Adafruit NeoPixel 라이브러리(설치필요)`를 사용하여 LED의 색상을 제어하는 방법을 알아봅니다.
 
+::gitHub{repo="adafruit/Adafruit_NeoPixel"}
+
 ---
 
 # 1. NeoPixel이란?
@@ -70,6 +72,7 @@ NeoPixel(네오픽셀)은 WS2812B 칩이 내장된 RGB LED입니다.
 ::github{repo="KKK12142/CANSAT_project"}
 
 ### 기본 설정 및 객체 생성
+
 ```c++
 #include <Adafruit_NeoPixel.h> //사용하는 라이브러리 선언 필수로해줘야함.
 
@@ -79,22 +82,28 @@ NeoPixel(네오픽셀)은 WS2812B 칩이 내장된 RGB LED입니다.
 
 // NeoPixel 객체 생성
 // NEO_GRB + NEO_KHZ800: 일반적인 WS2812B 스트립 설정
-//네오픽셀의 라이브러리에서 pixels 라는 이름으로 객체를 생성하고 사용하겠다는 말임. 자세히 몰라도됨.
+//네오픽셀의 라이브러리에서 pixels 라는 이름으로 객체를 생성 (아래 설명참조)
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
 
 void setup() {
   pixels.begin();           // 네오픽셀 제어 시작
   pixels.setBrightness(30); // 밝기 조절 (0~255), 전력 소모를 위해 낮게 설정
-  pixels.show();            // 초기화 (모두 끄기)
 }
 ```
+
+아래 코드에 대해서 알아봅시다.
+```c++
+Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+```
+이 코드는 `Adafruit_NeoPixel 라이브러리`에서 제공하는 객체 생성 코드입니다. `pixels`라는 이름으로 객체를 생성하겠다는 코드 입니다. 객체 이름은 자유롭게 바꿔도 상관 없습니다. 예를 들면 `LED`라고 이름을 지을 수 도 있습니다. 객체를 생성하는 이유는 `Adafruit_NeoPixel 라이브러리`에서 제공하는 다양한 함수들을 사용하기 위함입니다. Adafruit_NeoPixel 안에는 begin(), show(), setPixelColor(), setBrightness() 등의 다양한 함수들이 있고 이를 이제 생성한 객체 이름을 이용해 pixels.begin(), pixels.show(), pixels.setPixelColor(), pixels.setBrightness() 처럼 사용할 수 있습니다.
 
 ### 색상 제어 함수(setLedColor)
 
 ```c++
 // R, G, B 색상(0~255)을 받아 모든 픽셀의 색을 변경하는 함수
 void setLedColor(int r, int g, int b) {
-  for(int i = 0; i < NUMPIXELS; i++) {
+  for(int i = 0; i < NUMPIXELS; i++) { //for(변수선언; 조건 ; 변수값 +1증가시키기)
     // i번째 픽셀에 색상 설정 (메모리에 저장)
     pixels.setPixelColor(i, pixels.Color(r, g, b));
   }
@@ -102,6 +111,12 @@ void setLedColor(int r, int g, int b) {
   pixels.show();
 }
 ```
+이 코드는 `setLedColor` 라는 함수를 정의 하는 부분입니다. 여기서 for 반복문을 통하여 NUMPIXELS만큼 반복하여 각 LED에 색상을 설정합니다.
+
+`setPixelColor` 함수는 변수로 `led의 번호`와 `색상 값`을 파라미터로 받아서 LED의 색상을 설정합니다.
+`Color` 함수는 R, G, B 값을 받아서 색상을 32비트 (ex 0x00RRGGBB)로 변환하여 합니다.
+
+예를 들어 pixels.Color(255, 0, 0)은 0x00FF0000를 반환합니다.
 
 ### 기본 반복 코드
 ```c++
