@@ -30,7 +30,7 @@ NeoPixel(네오픽셀)은 WS2812B 칩이 내장된 RGB LED입니다.
 # 2. 하드웨어 연결
 [우리들캔위성(S2B구매제품)](https://www.s2b.kr/S2BNCustomer/rema100.do)에서 제공하는 PCB에는 NEOPIXEL을 연결하는 단자가 그림과 같이 만들어져있음. 참고로 가격이 사악하다. 약 13만원
 
-[X]TODO: 오른쪽 이미지 회로도로 바꾸기
+#[X]TODO: 오른쪽 이미지 회로도로 바꾸기
 <div class="w-full mx-auto flex justify-center">
 
 <div class="w-1/2 mr-1 flex justify-center">
