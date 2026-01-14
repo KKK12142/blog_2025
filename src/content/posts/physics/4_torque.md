@@ -5,7 +5,6 @@ tags: [Physics]
 description: 이 포스팅은 물리학의 기본 개념인 돌림힘이란 무엇인가에 대해 설명합니다.
 category: 물리학
 draft: false
-slug: physics/4_torque
 ---
 
 # 돌림힘이란 무엇인가

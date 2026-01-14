@@ -5,7 +5,6 @@ tags: [Physics]
 description: 이 포스팅은 물리학의 기본 개념인 벡터의 표현에 대해 설명합니다.
 category: 물리학
 draft: false
-slug: physics/1_vector
 ---
 #TODO 벡터의 표현 작성하기
 

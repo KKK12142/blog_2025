@@ -5,7 +5,6 @@ tags: [Physics]
 description: 이 포스팅은 물리학의 기본 개념인 힘의 평형과 구조물의 안정성에 대해 설명합니다.
 category: 물리학
 draft: false
-slug: physics/5_equilibrium
 ---
 
 # 평형과 안정성: 왜 우리는 넘어지지 않을까?

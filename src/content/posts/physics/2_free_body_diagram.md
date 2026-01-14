@@ -5,7 +5,6 @@ tags: [Physics]
 description: 이 포스팅은 물리학의 기본 개념인 자유물체도 그리기에 대해 설명합니다.
 category: 물리학
 draft: false
-slug: physics/2_free_body_diagram
 ---
 
 ## 자유물체도 그리기
