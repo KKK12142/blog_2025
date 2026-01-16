@@ -1,5 +1,5 @@
 ---
-title: 벡터의 표현
+title: 1. 벡터의 표현
 published: 2026-01-15
 tags: [Physics, Vector]
 description: 물리량을 나타내는 벡터의 다양한 표현 방법을 학습합니다.

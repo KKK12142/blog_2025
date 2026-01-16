@@ -1,5 +1,5 @@
 ---
-title: 자유물체도 그리기
+title: 3. 자유물체도 그리기
 published: 2026-01-15
 tags: [Physics, FBD, Force]
 description: 물체에 작용하는 힘을 분석하는 자유물체도 그리는 방법을 학습합니다.
