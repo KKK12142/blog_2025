@@ -158,6 +158,15 @@ export default defineConfig({
 		],
 	},
 	vite: {
+		optimizeDeps: {
+			include: ['p5'],
+			esbuildOptions: {
+				target: 'esnext'
+			}
+		},
+		ssr: {
+			noExternal: ['p5', 'gifenc']
+		},
 		build: {
 			rollupOptions: {
 				onwarn(warning, warn) {

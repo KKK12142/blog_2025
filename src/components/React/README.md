@@ -1,229 +1,140 @@
-# Physics3D 컴포넌트 라이브러리
+# Physics Simulations with p5.js
 
-물리 교육용 Three.js (React Three Fiber) 컴포넌트 모음
+이 폴더는 Nature of Code 패턴을 따르는 p5.js 물리학 시뮬레이션 컴포넌트들을 포함합니다.
 
-## 📦 설치
-
-```bash
-npm install three @react-three/fiber @react-three/drei leva
-```
-
-## 📁 파일 구조
+## 구조
 
 ```
-src/components/
-├── physics3d/
-│   ├── index.js          # 모든 컴포넌트 export
-│   ├── Arrow.jsx         # 벡터 화살표
-│   ├── Axis.jsx          # 좌표축, 그리드
-│   ├── PhysicsCanvas.jsx # 2D/3D 캔버스 래퍼
-│   ├── Shapes.jsx        # 점선, 각도호, 바닥 등
-│   ├── InfoPanel.jsx     # 정보 패널
-│   └── examples/
-│       ├── ForceAddition.jsx    # 힘의 합성
-│       └── FreebodyDiagram.jsx  # 자유물체도
+React/
+├── P5Canvas.jsx          # p5.js wrapper 컴포넌트
+├── examples/             # 예제 시뮬레이션들
+│   └── BouncingBall.jsx  # 튀어오르는 공 예제
+└── README.md
 ```
 
-## 🚀 빠른 시작
+## P5Canvas 사용법
 
-### MDX에서 사용
+`P5Canvas`는 p5.js 스케치를 Astro 블로그에 통합하기 위한 wrapper 컴포넌트입니다.
+
+### 기본 사용법
+
+```jsx
+import P5Canvas from '@components/React/P5Canvas';
+
+const createSketch = (p) => {
+  let x = 0;
+
+  return {
+    setup: () => {
+      p.background(220);
+    },
+
+    draw: () => {
+      p.background(220);
+      p.circle(x, p.height / 2, 50);
+      x = (x + 1) % p.width;
+    },
+
+    reset: () => {
+      x = 0;
+    }
+  };
+};
+
+const MySimulation = () => {
+  return (
+    <P5Canvas
+      sketch={createSketch}
+      width={600}
+      height={400}
+      title="나의 시뮬레이션"
+      githubUrl="https://github.com/..."
+    />
+  );
+};
+```
+
+### Props
+
+- `sketch` (Function, required): p5 인스턴스를 받아 `{setup, draw, reset}` 객체를 반환하는 함수
+- `width` (Number, optional): 캔버스 너비. 지정하지 않으면 부모 요소의 전체 너비 사용
+- `height` (Number, optional): 캔버스 높이. 지정하지 않으면 부모 요소의 전체 높이 사용 (최소 400px)
+- `title` (String, optional): 시뮬레이션 제목
+- `githubUrl` (String, optional): GitHub 코드 링크
+
+**반응형 캔버스**: width나 height를 지정하지 않으면 캔버스가 자동으로 부모 요소의 크기에 맞춰지고, 윈도우 리사이즈 시에도 자동으로 조정됩니다.
+
+### Nature of Code 패턴
+
+시뮬레이션 작성 시 다음 패턴을 따르세요:
+
+1. **클래스 기반 객체**: 물리적 객체는 클래스로 정의
+2. **벡터 사용**: p5.Vector를 사용하여 위치, 속도, 가속도 표현
+3. **힘의 적용**: `applyForce()` 메서드로 힘을 가속도에 추가
+4. **업데이트 로직**: 가속도 → 속도 → 위치 순서로 업데이트
+
+```jsx
+class Particle {
+  constructor(p, x, y) {
+    this.p = p;
+    this.position = p.createVector(x, y);
+    this.velocity = p.createVector(0, 0);
+    this.acceleration = p.createVector(0, 0);
+  }
+
+  applyForce(force) {
+    this.acceleration.add(force);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0); // Reset
+  }
+
+  display() {
+    this.p.circle(this.position.x, this.position.y, 10);
+  }
+}
+```
+
+## Astro에서 사용하기
+
+MDX 파일에서 컴포넌트를 import하여 사용:
 
 ```mdx
 ---
-title: 힘의 합성
+title: "물리 시뮬레이션"
 ---
 
-import ForceAddition from '@/components/physics3d/examples/ForceAddition'
+import BouncingBall from '@components/React/examples/BouncingBall.jsx';
 
-<ForceAddition client:only="react" />
+# 중력 시뮬레이션
+
+<BouncingBall client:load />
 ```
 
-> ⚠️ **중요**: Astro에서 `client:only="react"` 필수!
+`client:load` 디렉티브는 페이지 로드 시 즉시 컴포넌트를 hydrate합니다.
 
-### 2D 시뮬레이션 기본 템플릿
+## 컨트롤
 
-```jsx
-import { PhysicsCanvas2D } from '@/components/physics3d'
-import { Arrow, Axis, Grid2D, InfoPanel } from '@/components/physics3d'
+모든 시뮬레이션은 다음 컨트롤을 포함합니다:
 
-export default function MySimulation() {
-  return (
-    <PhysicsCanvas2D height="500px" zoom={50}>
-      <Grid2D />
-      <Axis is2D />
-      
-      <Arrow from={[0,0,0]} to={[2,1,0]} color="red" label="F" />
-      
-      <InfoPanel position={[3, 2, 0]} title="결과">
-        <p>값: 123</p>
-      </InfoPanel>
-    </PhysicsCanvas2D>
-  )
-}
-```
+- **리셋**: 시뮬레이션을 초기 상태로 되돌립니다
+- **일시정지/재시작**: 시뮬레이션을 멈추거나 다시 시작합니다
+- **코드 보기**: GitHub에서 소스 코드를 확인합니다 (githubUrl이 제공된 경우)
 
-### 3D 시뮬레이션 기본 템플릿
+## 스타일링
 
-```jsx
-import { PhysicsCanvas3D } from '@/components/physics3d'
-import { Arrow, Axis } from '@/components/physics3d'
+컴포넌트는 블로그의 디자인 시스템을 따릅니다:
 
-export default function My3DSimulation() {
-  return (
-    <PhysicsCanvas3D height="500px" cameraPosition={[5, 4, 5]}>
-      <Axis />
-      
-      <Arrow from={[0,0,0]} to={[2,0,0]} color="blue" label="r" />
-      <Arrow from={[2,0,0]} to={[2,2,0]} color="red" label="F" />
-      
-      {/* 3D 물체 */}
-      <mesh position={[0, 0, 0]}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="orange" />
-      </mesh>
-    </PhysicsCanvas3D>
-  )
-}
-```
+- 다크 모드 자동 지원
+- Tailwind CSS 클래스 사용
+- 블로그 테마 색상 변수 사용 (`var(--card-bg)`, `var(--btn-regular-bg)` 등)
+- 반응형 디자인
 
-## 📚 컴포넌트 API
+## 참고 자료
 
-### Arrow
-
-```jsx
-<Arrow 
-  from={[0, 0, 0]}      // 시작점
-  to={[2, 1, 0]}        // 끝점
-  color="#dc2626"       // 색상
-  label="F₁"            // 라벨
-  labelOffset={[0.2, 0.2, 0]}  // 라벨 오프셋
-  headLength={0.2}      // 화살표 머리 길이
-  headWidth={0.1}       // 화살표 머리 너비
-/>
-```
-
-### PhysicsCanvas2D
-
-```jsx
-<PhysicsCanvas2D 
-  height="500px"        // 높이
-  zoom={50}             // 줌 레벨 (클수록 확대)
-  showControls={true}   // OrbitControls 표시
-  background="#fafafa"  // 배경색
-/>
-```
-
-### PhysicsCanvas3D
-
-```jsx
-<PhysicsCanvas3D 
-  height="500px"
-  cameraPosition={[5, 4, 5]}  // 카메라 위치
-  fov={50}                     // 시야각
-/>
-```
-
-### Shapes
-
-```jsx
-// 점선
-<DashedLine from={[0,0,0]} to={[2,2,0]} color="gray" />
-
-// 각도 호
-<AngleArc 
-  center={[0, 0, 0]} 
-  startAngle={0} 
-  endAngle={45}   // 도 단위
-  radius={0.5}
-  label="θ"
-/>
-
-// 직각 표시
-<RightAngle position={[1, 0, 0]} size={0.2} rotation={0} />
-
-// 바닥 (빗금 포함)
-<Ground start={[-3, 0, 0]} end={[3, 0, 0]} />
-
-// 스프링
-<Spring from={[0, 0, 0]} to={[2, 0, 0]} coils={8} />
-```
-
-### InfoPanel
-
-```jsx
-<InfoPanel 
-  position={[3, 2, 0]} 
-  title="계산 결과"
-  accentColor="#16a34a"
->
-  <p>F = 10 N</p>
-  <p>a = 2 m/s²</p>
-</InfoPanel>
-```
-
-## 🎮 Leva 컨트롤 사용
-
-```jsx
-import { useControls } from 'leva'
-
-function Scene() {
-  const { force, angle } = useControls({
-    force: { value: 10, min: 0, max: 50, label: '힘 (N)' },
-    angle: { value: 30, min: 0, max: 90, label: '각도 (°)' }
-  })
-  
-  return (
-    <Arrow 
-      from={[0, 0, 0]} 
-      to={[force * Math.cos(angle * Math.PI / 180), force * Math.sin(angle * Math.PI / 180), 0]} 
-    />
-  )
-}
-```
-
-## 🎯 물리 시뮬레이션 예제 목록
-
-- [x] 힘의 합성 (ForceAddition)
-- [x] 자유물체도 (FreebodyDiagram)
-- [ ] 돌림힘 (Torque)
-- [ ] 시소 평형 (Seesaw)
-- [ ] 경사면 운동 (InclinePlane)
-- [ ] 도르래 시스템 (Pulley)
-- [ ] 용수철 진동 (SpringOscillation)
-- [ ] 포물선 운동 (Projectile)
-
-## 💡 팁
-
-### 성능 최적화
-
-```jsx
-// 복잡한 계산은 useMemo로 캐싱
-const vectors = useMemo(() => {
-  return calculateVectors(force, angle)
-}, [force, angle])
-```
-
-### 애니메이션
-
-```jsx
-import { useFrame } from '@react-three/fiber'
-
-function AnimatedObject() {
-  const ref = useRef()
-  
-  useFrame((state, delta) => {
-    ref.current.rotation.z += delta * 0.5
-  })
-  
-  return <mesh ref={ref}>...</mesh>
-}
-```
-
-### 반응형
-
-```jsx
-// 화면 크기에 맞게 자동 조절
-<div style={{ width: '100%', maxWidth: '800px', margin: '0 auto' }}>
-  <PhysicsCanvas2D height="400px" />
-</div>
-```
+- [Nature of Code](https://natureofcode.com/) - Daniel Shiffman
+- [p5.js Reference](https://p5js.org/reference/)
+- [The Coding Train](https://thecodingtrain.com/)
