@@ -10,9 +10,9 @@ async function getRawSortedPosts() {
 	});
 
 	const sorted = allBlogPosts.sort((a, b) => {
-		const dateA = new Date(a.data.published);
-		const dateB = new Date(b.data.published);
-		return dateA > dateB ? -1 : 1;
+		const titleA = a.data.title.toLowerCase();
+		const titleB = b.data.title.toLowerCase();
+		return titleA.localeCompare(titleB, 'ko');
 	});
 	return sorted;
 }

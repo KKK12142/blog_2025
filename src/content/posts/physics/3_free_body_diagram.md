@@ -1,6 +1,6 @@
 ---
 title: 3. 자유물체도 그리기
-published: 2026-01-15
+published: 2026-01-01
 tags: [Physics, FBD, Force]
 description: 물체에 작용하는 힘을 분석하는 자유물체도 그리는 방법을 학습합니다.
 category: 물리학
@@ -27,7 +27,7 @@ draft: false
 
 ### 실제 상황 vs 자유물체도
 
-![자유물체도 개념](./img/fbd_01_concept.png)
+![자유물체도 개념](/images/physics/fbd_01_concept.png)
 
 왼쪽은 바닥에 놓인 상자의 실제 상황이다. 오른쪽은 같은 상황에 상자의 자유물체도를 그린것이다.
 
@@ -44,7 +44,7 @@ draft: false
 
 ## 2. 자유물체도 그리기 4단계
 
-![그리기 단계](./img/fbd_08_steps.png)
+![그리기 단계](/images/physics/fbd_08_steps.png)
 
 | 단계 | 설명 |
 |------|------|
@@ -82,7 +82,7 @@ draft: false
 <div class="flex w-full justify-center">
  <div class="flex w-1/3 mr-16">
 
- ![바닥 위 물체](./img/fbd_02_floor.png)
+ ![바닥 위 물체](/images/physics/fbd_02_floor.png)
  </div>
  <div class="flex w-1/3 flex-col">
     <p>
@@ -111,7 +111,7 @@ $$
 <div class='flex w-full justify-center'>
 <div class='w-1/3 mr-16'>
 
-![매달린 물체](./img/fbd_05_hanging.png)
+![매달린 물체](/images/physics/fbd_05_hanging.png)
 </div>
 <div class='w-1/3'>
 
@@ -136,7 +136,7 @@ $$
 <div class='flex w-full justify-center'>
 <div class='w-3/5 mr-8'>
 
-![경사면 위 물체](./img/fbd_03_incline.png)
+![경사면 위 물체](/images/physics/fbd_03_incline.png)
 </div>
 <div class='w-2/5'>
 
@@ -156,7 +156,7 @@ $$
 <div class='flex w-full justify-center'>
 <div class='w-3/5 mr-8'>
 
-![힘의 분해](./img/fbd_04_decomposition.png)
+![힘의 분해](/images/physics/fbd_04_decomposition.png)
 
 </div>
 </div>
@@ -188,7 +188,7 @@ $$
 <div class='flex w-full justify-center'>
 <div class='w-3/5 mr-8'>
 
-![마찰력](./img/fbd_06_friction.png)
+![마찰력](/images/physics/fbd_06_friction.png)
 
 </div>
 <div class='w-2/5'>
@@ -230,7 +230,7 @@ $$
 <div class='flex w-full justify-center'>
  <div class='w-4/5 mr-8'>
 
- ![도르래](./img/fbd_07_pulley.png)
+ ![도르래](/images/physics/fbd_07_pulley.png)
  </div>
 </div>
 

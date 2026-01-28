@@ -1,6 +1,6 @@
 ---
 title: 2. 힘이란 무엇인가?
-published: 2026-01-16
+published: 2026-01-01
 tags: [Physics]
 description: 이 포스팅은 물리학의 기본 개념인 힘의 정의와 벡터 표현에 대해 설명합니다.
 category: 물리학
@@ -16,7 +16,7 @@ draft: false
 
 $$1\,\mathrm{N} = 1\,\mathrm{kg} \cdot \mathrm{m/s}^2$$
 
-![힘의 단위](./img/힘의단위.png)
+![힘의 단위](/images/physics/힘의단위.png)
 
 ## 힘의 벡터 표현
 힘은 크기와 방향을 모두 갖는 벡터이므로, 한 물체에 작용하는 힘도 벡터의 합으로 표현할 수 있다. 아래 시뮬레이션을 통해서 1차원에서 작용하는 `모든 힘의 합(알짜힘이)`에 대해서 탐구해 보자.
@@ -34,7 +34,7 @@ $$1\,\mathrm{N} = 1\,\mathrm{kg} \cdot \mathrm{m/s}^2$$
 
 | | |
 |:---:|:---:|
-| ![같은방향힘](./img/같은방향힘.png) | ![반대방향힘](./img/반대방향힘.png) |
+| ![같은방향힘](/images/physics/같은방향힘.png) | ![반대방향힘](/images/physics/반대방향힘.png) |
 | **같은 방향으로 $F_1$과 $F_2$가 작용할 때** | **반대 방향으로 $F_1$과 $F_2$가 작용할 때** |
 | $F_{net} = F_1 + F_2$ | $F_{net} = F_1 - F_2$ ($F_2$가 -방향이므로)|
 
@@ -45,7 +45,7 @@ $$1\,\mathrm{N} = 1\,\mathrm{kg} \cdot \mathrm{m/s}^2$$
 <div class='flex w-full justify-center'>
 <div class='w-2/3'>
 
-![2차원 힘의 합성](./img/2차원힘합성.png)
+![2차원 힘의 합성](/images/physics/2차원힘합성.png)
 </div>
 </div>
 

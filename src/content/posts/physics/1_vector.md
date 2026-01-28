@@ -1,6 +1,6 @@
 ---
 title: 1. 벡터의 표현
-published: 2026-01-15
+published: 2026-01-01
 tags: [Physics, Vector]
 description: 물리량을 나타내는 벡터의 다양한 표현 방법을 학습합니다.
 category: 물리학
@@ -80,7 +80,7 @@ $$
 <div class='w-full flex justify-center'>
   <div class= "w-1/2">
 
-  ![벡터 화살표 표현 다이어그램 위치](./img/벡터의-표현.png)
+  ![벡터 화살표 표현 다이어그램 위치](/images/physics/벡터의-표현.png)
   </div>
 </div>
 
@@ -94,7 +94,7 @@ $$
 <div class='w-full flex justify-center'>
   <div class= "w-1/2">
 
-  ![동쪽 방향 벡터 예시 위치](./img/백터의-예시.png)
+  ![동쪽 방향 벡터 예시 위치](/images/physics/백터의-예시.png)
   </div>
 </div>
 
@@ -115,7 +115,7 @@ $$
 <div class='w-full flex justify-center'>
   <div class= "w-3/4">
 
-  ![벡터 성분 분해 다이어그램 위치](./img/벡터의-성분.png)
+  ![벡터 성분 분해 다이어그램 위치](/images/physics/벡터의-성분.png)
   </div>
 </div>
 
@@ -141,7 +141,7 @@ $$
 <div class='w-full flex justify-center'>
   <div class= "w-3/4">
 
-  ![벡터 성분 분해 예시 위치](./img/벡터의-예시2.png)
+  ![벡터 성분 분해 예시 위치](/images/physics/벡터의-예시2.png)
   </div>
 </div>
 

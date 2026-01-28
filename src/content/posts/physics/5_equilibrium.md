@@ -1,6 +1,6 @@
 ---
 title: 5. 평형과 안정성
-published: 2026-01-20
+published: 2026-01-01
 description: 물체가 넘어지지 않고 균형을 유지하는 조건과 안정성의 종류를 학습합니다.
 tags: [Physics, Equilibrium, Stability]
 category: 물리학
@@ -46,7 +46,7 @@ $$
 <div class='w-full flex justify-center'>
   <div class='w-1/2'>
   
-  ![힘의 평형](./img/fbd_02_floor.png)
+  ![힘의 평형](/images/physics/fbd_02_floor.png)
   </div>
 </div>
 
@@ -63,7 +63,7 @@ $$
 <div class='w-full flex justify-center'>
   <div>
   
-  ![힘의 평형](./img/equilibrium_2d.svg)
+  ![힘의 평형](/images/physics/equilibrium_2d.svg)
   </div>
 </div>
 
@@ -79,12 +79,12 @@ $$
 <div class="flex justify-center w-full gap-4">
   <div class="w-1/2">
 
-  ![돌림힘 비평형](./img/돌림힘_비평형.png)
+  ![돌림힘 비평형](/images/physics/돌림힘_비평형.png)
 
   </div>
   <div class="w-1/2">
 
-  ![돌림힘 평형](./img/돌림힘_평형.png)
+  ![돌림힘 평형](/images/physics/돌림힘_평형.png)
 
   </div>
 </div>
@@ -117,7 +117,7 @@ $$
 <div class='w-full flex justify-center'>
   <div>
 
-  ![시소 평형](./img/힘의평형.png)
+  ![시소 평형](/images/physics/힘의평형.png)
   </div>
 </div>
 
@@ -161,7 +161,7 @@ $$
 <div class='w-full flex justify-center'>
   <div class='w-2/3'>
 
-  ![안정 평형](./img/다양한평형.jpg)
+  ![안정 평형](/images/physics/다양한평형.jpg)
   </div>
 </div>
 
@@ -236,7 +236,7 @@ $$
 <div class='w-full flex justify-center'>
   <div class='w-4/5 text-center'>
 
-  ![무게중심과 지지면](./img/무게중심과받침면.png)
+  ![무게중심과 지지면](/images/physics/무게중심과받침면.png)
   출처: 최혁준 외, [고등학교 물리학], 천재 교과서 27쪽
   </div>
 </div>
@@ -389,7 +389,7 @@ $$M = 10 \, \mathrm{kg}$$
 <div class='w-full flex justify-center'>
   <div class='w-4/5 text-center'>
 
-  ![무게중심과 지지면](./img/무게중심과받침면2.png)
+  ![무게중심과 지지면](/images/physics/무게중심과받침면2.png)
   출처: 최혁준 외, [고등학교 물리학], 천재 교과서 28쪽
 
   </div>
